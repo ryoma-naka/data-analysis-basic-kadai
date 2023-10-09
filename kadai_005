@@ -1,0 +1,33 @@
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(2,3, tight_layout = True)
+
+y0 = [1, 2, -5, 2]
+axes[0,0].plot(y0)
+
+#グラフ2番目
+x1 = np.linspace(0, 10, 100)
+y1 = 2 + 2 * np.sin(2 * x1)
+
+# プロット
+axes[0,1].plot(x1, y1, linewidth=2.0)
+
+axes[0,1].set(xlim=(0, 10), xticks=np.arange(0, 10),
+       ylim=(-1, 5), yticks=np.arange(-1, 6))
+
+#グラフ3番目
+x3 = np.random .normal(15, 5, 2000)
+axes[0,2].hist(x3)
+
+#グラフ4番目
+np.random.seed(3)
+x4 = 4 + np.random.normal(0, 2, 60)
+y4 = 4 + np.random.normal(0, 2, len(x4))
+
+# プロットする
+axes[1,0].scatter(x4, y4)
+
+
+plt.show()
