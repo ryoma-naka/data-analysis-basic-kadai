@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 import pandas as pd
-
-
 df = pd.read_csv("sample_pandas_6.csv")
 category_df = pd.read_csv('category.csv')
 category_df
@@ -15,6 +13,4 @@ category_counts.plot(kind='bar')
 
 plt.show()
 
-category_counts2=df.groupby('商品番号')['カテゴリー'].value_counts()
-category_counts2.describe
-
+df.groupby('商品番号')['注文数'].describe()
